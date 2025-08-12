@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import "tailwindcss-primeui";
+@import "@catppuccin/tailwindcss/mocha.css";
+
+:root {
+  --p-primary-color: var(--catppuccin-color-mauve) !important;
+  --p-primary-hover-color: var(--catppuccin-color-pink) !important;
+
+  --p-list-option-selected-color: var(--catppuccin-color-text) !important;
+  --p-list-option-selected-focus-color: var(--catppuccin-color-text) !important;
+
+  --p-select-border-color: var(--catppuccin-color-crust) !important;
+  --p-select-background: var(--catppuccin-color-mantle) !important;
+  --p-select-color: var(--catppuccin-color-subtext0) !important;
+  --p-select-hover-border-color: var(--catppuccin-color-mauve) !important;
+
+  --p-select-option-color: var(--catppuccin-color-subtext0) !important;
+  --p-select-option-selected-background: var(--catppuccin-color-mauve) !important;
+  --p-select-option-selected-focus-background: var(--catppuccin-color-mauve) !important;
+  --p-select-option-selected-color: var(--catppuccin-color-crust) !important;
+  --p-select-option-selected-focus-color: var(--catppuccin-color-crust) !important;
+  --p-select-option-focus-background: var(--catppuccin-color-surface1) !important;
+  --p-select-option-focus-color: var(--catppuccin-color-text) !important;
+
+  --p-select-overlay-background: var(--catppuccin-color-mantle) !important;
+  --p-select-overlay-border-color: var(--catppuccin-color-mantle) !important;
+
+  --p-radiobutton-background: var(--catppuccin-color-mantle) !important;
+  --p-radiobutton-border-color: var(--catppuccin-color-mantle) !important;
+  --p-radiobutton-hover-border-color: var(--catppuccin-color-mauve) !important;
+  --p-radiobutton-icon-checked-color: transparent !important;
+  --p-radiobutton-icon-checked-hover-color: transparent !important;
+
+  --p-toggleswitch-background: var(--catppuccin-color-mantle) !important;
+  --p-toggleswitch-hover-background: var(--catppuccin-color-crust) !important;
+  --p-toggleswitch-handle-background: var(--catppuccin-color-text) !important;
+  --p-toggleswitch-handle-hover-background: var(--catppuccin-color-pink) !important;
+  --p-toggleswitch-handle-checked-background: var(--catppuccin-color-crust) !important;
+  --p-toggleswitch-handle-checked-hover-background: var(--catppuccin-color-crust) !important;
+}
