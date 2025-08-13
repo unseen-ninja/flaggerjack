@@ -28,11 +28,25 @@ async function draw() {
 
   if (!flagPath.value) return
 
+  let customBowtie = false
+  const customBowties = async (currentFlag) => {
+    if (currentFlag.includes("israel")) {
+      customBowtie = true
+      return await loadImage("/flags/tpl-bowtie-palestine.png")
+    }
+    if (currentFlag.includes("russia")) {
+      customBowtie = true
+      return await loadImage("/flags/tpl-bowtie-ukraine.png")
+    }
+    return ""
+  }
+
   try {
-    const [pepperjackImg, flagImg, outlineImg, flagOverlay] = await Promise.all([
+    const [pepperjackImg, bowtieOverride, flagImg, outlineImg, flagOverlay] = await Promise.all([
       props.flavour === "latte"
         ? loadImage("/flags/tpl-pepperjack-latte.png")
         : loadImage("/flags/tpl-pepperjack-mocha.png"),
+      customBowties(flagPath.value),
       loadImage(flagPath.value),
       props.outlined
         ? props.flavour === "latte"
@@ -44,6 +58,7 @@ async function draw() {
 
     if (outlineImg) ctx.drawImage(outlineImg, 0, 0, canvas.width, canvas.height)
     ctx.drawImage(pepperjackImg, 0, 0, canvas.width, canvas.height)
+    if (customBowtie) ctx.drawImage(bowtieOverride, 0, 0, canvas.width, canvas.height)
 
     ctx.save()
     const scaleFactor = 0.7
