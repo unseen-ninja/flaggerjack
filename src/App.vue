@@ -1,27 +1,43 @@
 <script setup lang="ts">
-import EmoteCreator from "./components/EmoteCreator.vue"
+import EmoteGenerator from "./components/EmoteGenerator.vue"
 import FooterNote from "./components/FooterNote.vue"
 </script>
 
 <template>
-  <main id="main-content" class="grid gap-6 min-h-screen">
+  <main id="generator" class="grid max-lg:gap-8 lg:grid-cols-3 p-8 lg:p-0 max-lg:max-w-xl min-h-screen max-lg:mx-auto">
+    <EmoteGenerator />
     <FooterNote />
-    <EmoteCreator />
   </main>
 </template>
 
 <style>
-#main-content {
-  grid-template-rows: min-content 1fr;
+#generator {
+  grid-template-rows: repeat(3, min-content);
+  grid-auto-rows: none;
+  grid-template-areas:
+    "footer"
+    "preview"
+    "controls";
 }
 
-@media (width > 500px) {
-  #main-content {
-    grid-template-rows: 1fr min-content;
-  }
+#preview {
+  grid-area: preview;
+}
+#controls {
+  grid-area: controls;
+}
 
-  #main-content :first-child {
-    grid-row: 2 / -1;
+#disclaimer {
+  grid-area: footer;
+}
+
+@media (width >= 64rem) {
+  #generator {
+    grid-template-rows: 1fr min-content;
+    grid-template-columns: max(360px) 1fr;
+    grid-template-areas:
+      "controls preview"
+      "footer preview";
   }
 }
 </style>
